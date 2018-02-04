@@ -17,9 +17,25 @@
     "electron-dev": "ELECTRON_URL=http://localhost:3000 electron .",
     "electron-prod": "electron .",
     "dev": "yarn start & yarn electron-dev & wait",
-    "prod": "yarn build && yarn electron-prod"
+    "prod": "yarn build && yarn electron-prod",
+    "pack": "react-scripts build && electron-builder --linux --win --mac"
   },
   "devDependencies": {
-    "electron": "^1.7.12"
+    "electron": "^1.7.12",
+    "electron-builder": "^19.55.3"
+  },
+  "build": {
+    "files": [
+      "*.js",
+      "build",
+      "lib",
+      "node_modules"
+    ],
+    "extraFiles": "data",
+    "win": {},
+    "linux": {},
+    "mac": {
+      "target": "zip"
+    }
   }
 }

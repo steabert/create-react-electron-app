@@ -28,3 +28,9 @@ yarn prod
 for production.
 
 Scripts with node dependencies can be added to the `lib/` directory, and exposed via `lib/index.js`.
+
+To create packages for Windows, Linux, and Mac, use:
+```
+yarn pack
+```
+which will build and package the electron app.
