@@ -2,6 +2,8 @@
   "name": "create-react-electron-app",
   "version": "0.1.0",
   "private": true,
+  "main": "electron-entry.js",
+  "homepage": "./",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -11,6 +13,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "ELECTRON_URL=http://localhost:3000 electron .",
+    "electron-prod": "electron .",
+    "dev": "yarn start & yarn electron-dev & wait",
+    "prod": "yarn build && yarn electron-prod"
+  },
+  "devDependencies": {
+    "electron": "^1.7.12"
   }
 }
