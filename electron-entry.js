@@ -8,7 +8,13 @@ let win
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 1280, height: 1024 })
+  win = new BrowserWindow({
+    width: 1280,
+    height: 1024,
+    webPreferences: {
+      preload: path.join(__dirname, '/lib/index.js')
+    }
+  })
   win.maximize()
 
   // and load the index.html of the app.
